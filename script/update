@@ -1,0 +1,2 @@
+#!/bin/sh
+github-markup "text/$1.md" | pbcopy
