@@ -38,11 +38,18 @@ The basic process of recognizing speech is simplified as
 
 Speech `-> 1. Feature Extraction -> 2. Hypothesis Search ->` Decoded Hypothesis
 
+![algorithm overview](images/speech/algorithm-overview.png)
+
 1. **Feature Extraction**<br /><br />
 In the feature extraction phase, the software system extracts a set of 39 parameters describing the audio segment in a vector called a feature. The collection of features are often referred to as acoustic observations.
 
 2. **Hypothesis Search**<br /><br />
 The hypothesis search phase uses the feature vectors to analyze speech. Here, a lexicon is used in combination with a language and acoustic model. A lexicon is a list of every possible word with a unique pronunciation. Lexicons are often created with a certain task in mind to limit its size and therefore reduce the complexity of the algorithm. A language model computes the probability of a sequence of words and an acoustic model computes the probability of sequences of feature vectors. Together, these 3 things are used to create the weighted acyclic graph that was mentioned earlier. The nodes in this graph are word possibilities and the edges are weighted by the probabilities. Each path through the graph represents a possible sequence of words, and the final result is the sequence that has the best combined probability, which is the speech that the software has recognized.
+
+Here's a visual of the graph that the hypothesis search might use in an attempt to recognize the phrase *I move it very fast*
+
+
+![algorithm graph](images/speech/algorithm-graph.png)
 
 (source [Padmanabhan, Picheny](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&ved=0CHoQFjAI&url=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.108.2469%26rep%3Drep1%26type%3Dpdf&ei=3Wi9T_qKMavbiALJ3uGnDg&usg=AFQjCNGAnyvKFVpi4N6VUNCCKE5AZoirMQ&sig2=_e3iD8KUZlXO25J5JCpJjg))
 
