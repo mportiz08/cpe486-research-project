@@ -16,7 +16,37 @@ Siri (Speech Interpretation and Recognition Interface) is an application develop
 
 ### overview
 
-There are many components that make up the broad category of speech recognition. Some of the lesser known of them include **speaker recognition**, **talk-through** (also known as barge-in), **word spotting**, and **decoy**.
+There are many components that make up the broad category of speech recognition. While the most important one is the actual recognition of speech itself, some of the lesser known of its components include **speaker recognition**, **talk-through** (also known as barge-in), **word spotting**, and **decoy**. First, I'd like to take a look at the primary algorithms involved with speech recognition.
+
+### algorithms
+
+#### summary
+
+The following is a very simplified summary of [the speech recognition algorithm](http://arxiv.org/pdf/cmp-lg/9608018.pdf) as described by researchers from AT&T:
+
+The basic problem that this algorithm is attempting to solve can be given by the following prompt:
+
+> Given an utterance, find its most likely written transcription.
+
+The general solution for this involves transforming audio into weighted acyclic graphs that map possible interpretations of segments of the audio in the form of phonemes, phones, syllables, and words. The final written transcription for the audio is derived from the optimal path in this graph.
+
+The first step in this process is analyzing acoustic wave patterns from speech that at regular short intervals (for example, 10 milliseconds).
+
+#### details
+
+The basic process of recognizing speech is simplified as
+
+Speech `-> 1. Feature Extraction -> 2. Hypothesis Search ->` Decoded Hypothesis
+
+1. **Feature Extraction**<br /><br />
+In the feature extraction phase, the software system extracts a set of 39 parameters describing the audio segment in a vector called a feature. The collection of features are often referred to as acoustic observations.
+
+2. **Hypothesis Search**<br /><br />
+The hypothesis search phase uses the feature vectors to analyze speech. Here, a lexicon is used in combination with a language and acoustic model. A lexicon is a list of every possible word with a unique pronunciation. Lexicons are often created with a certain task in mind to limit its size and therefore reduce the complexity of the algorithm. A language model computes the probability of a sequence of words and an acoustic model computes the probability of sequences of feature vectors. Together, these 3 things are used to create the weighted acyclic graph that was mentioned earlier. The nodes in this graph are word possibilities and the edges are weighted by the probabilities. Each path through the graph represents a possible sequence of words, and the final result is the sequence that has the best combined probability, which is the speech that the software has recognized.
+
+(source [Padmanabhan, Picheny](http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&ved=0CHoQFjAI&url=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fdownload%3Fdoi%3D10.1.1.108.2469%26rep%3Drep1%26type%3Dpdf&ei=3Wi9T_qKMavbiALJ3uGnDg&usg=AFQjCNGAnyvKFVpi4N6VUNCCKE5AZoirMQ&sig2=_e3iD8KUZlXO25J5JCpJjg))
+
+### related technology
 
 #### speaker recognition
 
