@@ -56,6 +56,11 @@ a, a:visited, a:hover, a:active {
   color: #4d308a;
 }
 
+ol {
+  list-style: decimal inside none;
+  padding-left: 15px;
+}
+
 ul {
   list-style: disc inside none;
   padding-left: 15px;

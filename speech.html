@@ -49,6 +49,62 @@
 
         <p>Siri (Speech Interpretation and Recognition Interface) is an application developed by Apple for the most recent version of their incredibly popular product, the iPhone. In this example of its use, a user simply asks their question to their phone with this application running on their phone, and the software responds by presenting the user with a list of appropriate restaurants along with reviews and maps for each one. Siri exemplifies the pinnacle of how <strong>speech recognition</strong> technology is being used in consumer products today.</p>
 
+        <h2>technology</h2>
+
+        <h3>overview</h3>
+
+        <p>There are many components that make up the broad category of speech recognition. Some of the lesser known of them include <strong>speaker recognition</strong>, <strong>talk-through</strong> (also known as barge-in), <strong>word spotting</strong>, and <strong>decoy</strong>.</p>
+
+        <h4>speaker recognition</h4>
+
+        <p>Speaker recognition refers to the ability of the software to identify the individual who is speaking and is sometimes referred to as speaker identification. (source <a href="http://users.csc.calpoly.edu/%7Efkurfess/Courses/486/S12/Slides/486-S12-07-Speech.pdf">Kurfess</a>)</p>
+
+        <p>This capability requires additional intelligence from the software system, so that it can accurately distinguish the voices of different people with minimal errors. In this way, this technology can be used in biometric systems, which are used to prevent access to unauthorized users. The most common use case for voice based biometric systems are as security measures. An example of this in the real life is the <a href="http://www.loquendo.com/en/products/speaker-verification/">Loquendo Speaker Verification</a>, which is a product used in a variety of businesses worldwide.</p>
+
+        <p>For these types of applications, the term speaker identification is usually referred to as speaker <strong>verification</strong> in an attempt to better clarify the nature of the technology (security). Since a speaker verification system only needs to check for the correct user, it usually requires less complexity in the underlying algorithm. Speaker identification, on the other hand, requires more complexity in the underlying algorithm, because it has to attempt to actually match the voice to the appropriate user.</p>
+
+        <p>There are two main types of speaker recognition:</p>
+
+        <ol>
+        <li><p><strong>text-dependent</strong>:<br />
+        requires a matching text phrase to be spoken by the appropriate person to recognize the speaker</p></li>
+        <li><p><strong>text-<em>in</em>dependent</strong>:<br />
+        only requires the actual voice to match up</p></li>
+        </ol>
+
+        <p>(source: <a href="http://www.intechopen.com/books/biometrics/speaker-recognition">Beigi</a>)</p>
+
+        <h4>talk-through</h4>
+
+        <p>Talk-through, also known as barge-in, is simply the name for the technology that allows users of speech recognition systems to interrupt the system as it is prompting them for input. (source: <a href="http://users.csc.calpoly.edu/%7Efkurfess/Courses/486/S12/Slides/486-S12-07-Speech.pdf">Kurfess</a>)</p>
+
+        <p>The most obvious example of this in use in the real world is from the automated phone systems of many large telephony companies. This is something that I have personal experience with. Recently, I was attempting to contact the support group for my cable company on the phone. This company used automated voice recognition software that began to list off the available options for me to speak. Before it had finished, I voiced the appropriate command for my system. In response, the system recognized my command and discontinued listing the other options, so that it could help me with the option that I chose.</p>
+
+        <p>This type of voice technology is one that is becoming increasingly common with each passing year. Big companies like <a href="http://www.google.com/patents/US6563915">AT&amp;T</a>, <a href="http://www.google.com/patents/US6947895">Cisco</a>, <a href="http://www.google.com/patents/US20020184031">Hewlett Packard</a>, and <a href="http://www.google.com/patents/US6418216">IBM</a> all have patents that relate to barge-in enabled software.</p>
+
+        <h4>word spotting</h4>
+
+        <p>Word spotting is the ability of a voice recognition system to correctly identify specific words, even when surrounded by miscellaneous words that are irrelevant to the desired ones. (source: <a href="http://users.csc.calpoly.edu/%7Efkurfess/Courses/486/S12/Slides/486-S12-07-Speech.pdf">Kurfess</a>)</p>
+
+        <p>This technology is essential for software that needs to analyze spoken words in an attempt to detect if a certain phrase was spoken or not. The U.S. government is one of the key users of word spotting technology. Homeland Security uses it in its surveillance of many different audio sources on a regular basis. In an attempt to help prevent terrorist plots, they analyze spoken audio in an automated fashion, using word spotting tuned for phrases that may indicate terrorist activity. (source: <a href="http://www.nscspeech.com/pdf/kws-whitepaper.pdf">Alon</a>)</p>
+
+        <p>Other major users of word spotting technology are call centers. Some of them use software that is tuned to listen to phrases that indicate that a call is &quot;problematic&quot;, so that they can assist supervisors in finding and resolving them. Others use it to analyze their customers&#39; responses to the company itself after calls have taken place in order to better assess their effectiveness. (source <a href="http://www.nscspeech.com/pdf/kws-whitepaper.pdf">Alon</a>)</p>
+
+        <h4>decoy</h4>
+
+        <p>In the world of speech recognition, a decoy is defined as a word, phrase, or sound that is used to identify when the voice input has either stopped or been interrupted. (source: <a href="http://users.csc.calpoly.edu/%7Efkurfess/Courses/486/S12/Slides/486-S12-07-Speech.pdf">Kurfess</a>)</p>
+
+        <p>Decoys are separated into 2 main categories:</p>
+
+        <ul>
+        <li>natural</li>
+        <li>artificial</li>
+        </ul>
+
+        <p><em>Natural</em> decoys are inherent to the user and are most often associated with sounds having to do with hesitation or confusion on the user&#39;s part. <em>Artificial</em> decoys are not typically associated with the user&#39;s speech but with noises that are a product of the environment that he or she is in.</p>
+
+        <p>Decoys are crucial for dictation software. Programs that offer dictation need to be able to reproduce a user&#39;s speech with text at a very accurate and consistent level. In order to do this, the software needs to be able to correctly identify accidental utterances like &quot;uh&quot; and &quot;um&quot;, so that it doesn&#39;t record these mistakes. By training the system to recognize these words as decoys, this problem can potentially be avoided.</p>
+
         <h2>kinect</h2>
 
         <h3>technical aspects</h3>
@@ -81,14 +137,7 @@
         <p>Without any physical contact from the user, the Xbox will then load the software on the current disc.</p>
 
         <p><img src="http://nxeassets.xbox.com/shaxam/0201/6e/42/6e42ae2a-4ed8-4050-b5ea-3804036bdaeb.PNG?v=1#kinect-voice-recognition-m-m.PNG" alt="dashboar integration"></p>
-
-        <h2>technology</h2>
-
-        <p>TODO</p>
-
-        <h2>applications</h2>
-
-        <p>TODO</p>
+        
       </div>
     </section>
   </div>
