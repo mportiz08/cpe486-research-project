@@ -160,9 +160,84 @@
         <li>beam formation</li>
         </ul>
 
+        <p>The Kinect sensor can detect audio that is within +-50 degrees in front of the sensor. Within that range, the microphone array can be pointed in 10 degree increments and can be programmatically directed. It also supports up to 20dB of ambient noise cancellation for mono sound input. Sound from behind the sensor will be suppressed up to 6dB. The default behavior of the device is to track the loudest audio source. (source: <a href="http://go.microsoft.com/fwlink/?LinkID=247735">Human Interface Guidelines</a>)</p>
+
+        <p><img src="images/speech/kinect-audio-diagrams.png" alt="Kinect Audio Diagrams"></p>
+
         <p>Here&#39;s a <a href="http://support.xbox.com/en-US/kinect/voice/speech-recognition#d7e21da22ba34426bf8f46afc9028e79">link</a> to a listing of languages that the Kinect&#39;s speech recognition software currently recognizes and supports.</p>
 
         <p>To be used effectively, the device needs to be calibrated, so that it can better recognize voice commands. Also, the <a href="http://www.microsoft.com/en-us/kinectforwindows/">Kinect SDK</a> gives third party developers access to these audio features.</p>
+
+        <h3>sdk</h3>
+
+        <p>Microsoft provides programmatic access to the speech recognition capabilities of the Kinect with its software development kit. Its Runtime Language Pack has an acoustical model optimized for the device built in. To use it, developers need to create an instance of the Speech Recognizer Engine object. With that, they can load a customized grammar that contains the desired keywords to be detected. Then, developers need to implement an event handler that corresponds to the device when it may have recognized one of these words. This method will have access to a confidence level that represents how confident the sensor is that is has accurately recognized a word. Using this, developers can fine tune how sensitive their software is when dealing with voice commands.</p>
+
+        <p>Here is a <a href="http://msdn.microsoft.com/en-us/library/hh378426.aspx">code sample</a> from Microsoft that demonstrates basic speech recognition using the sdk:</p>
+
+        <pre><code>http://msdn.microsoft.com/en-us/library/hh378426.aspx
+
+        using Microsoft.Speech.Recognition;
+        using System;
+        using System.Collections.Generic;
+        using System.ComponentModel;
+        using System.Data;
+        using System.Drawing;
+        using System.Linq;
+        using System.Text;
+        using System.Windows.Forms;
+
+        namespace WindowsFormsApplication1
+        {
+          public partial class Form1 : Form
+          {
+            public Form1()
+            {
+              InitializeComponent();
+            }
+
+            private void Form1_Load(object sender, EventArgs e)
+            {
+
+              // Create a new SpeechRecognitionEngine instance.
+              sre = new SpeechRecognitionEngine();
+
+              // Create a simple grammar that recognizes &quot;red&quot;, &quot;green&quot;, or &quot;blue&quot;.
+              Choices colors = new Choices();
+              colors.Add(new string[] {&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;});
+
+              // Create a GrammarBuilder object and append the Choices object.
+              GrammarBuilder gb = new GrammarBuilder();
+              gb.Append(colors);
+
+              // Create the Grammar instance and load it into the speech recognition engine.
+              Grammar g = new Grammar(gb);
+              sre.LoadGrammar(g);
+
+              // Register a handler for the SpeechRecognized event.
+              sre.SpeechRecognized +=
+                new EventHandler&lt;SpeechRecognizedEventArgs&gt;(sre_SpeechRecognized);
+            }
+
+            // Create a simple handler for the SpeechRecognized event.
+            void sre_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+            {
+              MessageBox.Show(e.Result.Text);
+            }
+
+            SpeechRecognitionEngine sre;
+          }
+        }
+        </code></pre>
+
+        <p>There are two main methods of handling voice input that software developers can choose to implement with the sdk: <strong>always on, active listening</strong> and <strong>keyword/trigger</strong>.</p>
+
+        <h4>always on, active listening</h4>
+
+        <p>In this mode, the sensor is constantly listening for voice input from the user. Microsoft recommends that this method if there are only a few number of words or phrases that your software will recognize. (source: <a href="http://go.microsoft.com/fwlink/?LinkID=247735">Human Interface Guidelines</a>)</p>
+
+        <h4>keyword/trigger</h4>
+
+        <p>In this mode, the sensor is only listening for a single word. If that word is recognized, then the sensor will wait for additional voice commands. An example of this is shown later with Microsoft&#39;s xbox 360 dashboard integration. (source: <a href="http://go.microsoft.com/fwlink/?LinkID=247735">Human Interface Guidelines</a>)</p>
 
         <h3>dashboard integration</h3>
 

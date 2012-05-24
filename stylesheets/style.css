@@ -52,6 +52,17 @@ blockquote {
   text-decoration: italics;
 }
 
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  margin: 15px 0;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
 a, a:visited, a:hover, a:active {
   color: #4d308a;
 }
