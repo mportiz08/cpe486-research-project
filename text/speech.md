@@ -204,3 +204,62 @@ Microsoft [utilizes](http://support.xbox.com/en-US/kinect/voice/speech-recogniti
 Without any physical contact from the user, the Xbox will then load the software on the current disc.
 
 ![dashboar integration](http://nxeassets.xbox.com/shaxam/0201/6e/42/6e42ae2a-4ed8-4050-b5ea-3804036bdaeb.PNG?v=1#kinect-voice-recognition-m-m.PNG)
+
+## siri
+
+Siri is another application worth mentioning that utilizes speech recognition technology. Apple describes it as an "intelligent personal assistant". The most obvious difference from its implementation when compared to the Kinect, is that it uses what's called a natural language user interface to respond to user input. This means that the application attempts to use elements like verbs and nouns to parse some sort of valid input to the program. This means that owners of the latest iPhone can run the Siri application on their phone and ask it questions in a normal conversational way.
+
+In Apple's [words](http://www.apple.com/iphone/features/siri-faq.html):
+
+> But Siri isn’t like traditional voice recognition software that requires you to remember keywords and speak specific commands. Siri understands your natural speech, and it asks you questions if it needs more information to complete a task.
+
+
+The effectiveness of Siri's response to those questions is of course limited, but it is arguably one of the best voice recognition programs in terms of presenting a natural interface to users.
+
+### history
+
+Siri actually began in 2007 as a part of a DARPA funded project called CALO (Cognitive Agent that Learns and Organizes) and was initially using voice recognition technology from the company Nuance. The founding team went on to get millions of dollars in funding from several high profile investment companies. (source: [NYTimes](http://bits.blogs.nytimes.com/2010/02/05/a-personal-assistant-on-your-iphone/))
+
+On April 28, 2010, the Siri team was [acquired by Apple](http://scobleizer.com/2010/04/28/breaking-news-siri-bought-by-apple/). On october 4, 2011, Apple [introduced](http://www.telegraph.co.uk/technology/apple/8804922/Apple-iPhone-event-live.html) the new version of Siri along with the launch of the iPhone 4S.
+
+### uses
+
+Here is a list of the default iOS apps that Siri can interface with:
+
+  * Phone
+  * FaceTime
+  * Music
+  * Mail
+  * Messages
+  * Calendar
+  * Reminders
+  * Notes
+  * Contacts
+  * Weather
+  * Stocks
+  * Web Search
+  * Find My Friends
+  * Alarms, World Clock, Timer
+  
+
+Here are some 3rd party companies that Siri can interface with:
+
+  * Google
+  * Google Maps (US only)
+  * Bing
+  * Yahoo
+  * Wolfram Alpha
+  * Wikipedia
+  * Yelp! (US only)
+
+(source: [Apple](http://www.apple.com/iphone/features/siri-faq.html))
+
+Siri is also a good example of how voice recognition software can benefit people with accessability needs. The addition of Siri to the iPhone has made it a valuable resource for some people. For example, since the application focuses on speech input rather than visual text input, many people who are blind are finding it helpful.
+
+Chris Danielsen, a spokesman for the National Federation of the Blind [states](http://www.denverpost.com/business/ci_19109321):
+
+> The iPhone is the only fully accessible handset that a blind person can buy
+
+## conclusion
+
+Speech/voice recognition technology is an essential part of modern natural user interfaces. By utilizing speech as a method of input, the world of user experience in software is being changed dramatically. The algorithms that are powering this are incredibly complex and continually improving. Devices like the kinect and applications like Siri are showing how powerful speech recognition can be, and how its use can benefit people living in a computerized society. 
